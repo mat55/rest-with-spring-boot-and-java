@@ -14,8 +14,8 @@ public class StatusController {
 	private final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 	
-	@GetMapping("/teste")
-	public Status teste(@RequestParam(value = "name", defaultValue = "World") String name) {
+	@GetMapping("/getStatus")
+	public Status GetStatus(@RequestParam(value = "name", defaultValue = "World") String name) {
 		return new Status(counter.incrementAndGet(), String.format(template, name));
 	}
 }
