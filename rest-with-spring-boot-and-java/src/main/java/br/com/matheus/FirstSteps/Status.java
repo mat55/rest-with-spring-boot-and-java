@@ -1,4 +1,4 @@
-package br.com.matheus;
+package br.com.matheus.FirstSteps;
 
 public class Status {
 
