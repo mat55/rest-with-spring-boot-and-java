@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.matheus.Calculator.Services.MathService;
-import br.com.matheus.Exceptions.UnsupportedMathOperationException;
+import br.com.matheus.Exceptions.ResourceNotFoundException;
 
 @RestController
 @RequestMapping("/api")
@@ -20,7 +20,7 @@ public class MathController {
 	{
 		if(!mathService.isNumeric(numberOne) || !mathService.isNumeric(numberTwo)) 
 		{
-			throw new UnsupportedMathOperationException("Por favor digite valores numéricos");
+			throw new ResourceNotFoundException("Por favor digite valores numéricos");
 		}
 		
 		return mathService.sum(numberOne, numberTwo);
@@ -32,7 +32,7 @@ public class MathController {
 	{		
 		if(!mathService.isNumeric(numberOne) || !mathService.isNumeric(numberTwo)) 
 		{
-			throw new UnsupportedMathOperationException("Por favor digite valores numéricos");
+			throw new ResourceNotFoundException("Por favor digite valores numéricos");
 		}
 		
 		return mathService.subtraction(numberOne, numberTwo);
@@ -44,7 +44,7 @@ public class MathController {
 	{
 		if(!mathService.isNumeric(numberOne) || !mathService.isNumeric(numberTwo))
 		{
-			throw new UnsupportedMathOperationException("Por favor digite valores numéricos");
+			throw new ResourceNotFoundException("Por favor digite valores numéricos");
 		}
 		
 		return mathService.multiplication(numberOne, numberTwo);
@@ -56,7 +56,7 @@ public class MathController {
 	{
 		if(!mathService.isNumeric(numberOne) || !mathService.isNumeric(numberTwo)) 
 		{
-			throw new UnsupportedMathOperationException("Por favor digite valores numéricos");
+			throw new ResourceNotFoundException("Por favor digite valores numéricos");
 		}
 	
 		return mathService.division(numberOne, numberTwo);
@@ -68,7 +68,7 @@ public class MathController {
 	{
 		if(!mathService.isNumeric(numberOne) || !mathService.isNumeric(numberTwo)) 
 		{
-			throw new UnsupportedMathOperationException("Por favor digte valores numéricos");
+			throw new ResourceNotFoundException("Por favor digte valores numéricos");
 		}
 		
 		return mathService.mean(numberOne, numberTwo); 
@@ -79,7 +79,7 @@ public class MathController {
 	{
 		if(!mathService.isNumeric(numberOne))
 		{
-			throw new UnsupportedMathOperationException("Por favor digte valor numérico");
+			throw new ResourceNotFoundException("Por favor digte valor numérico");
 		}
 		
 		return mathService.squareRoot(numberOne);
