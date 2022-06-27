@@ -1,2 +1,33 @@
 server:
   port: 8080
+
+cors:
+  originPatterns: http://localhost:3000,http://localhost:8080,https://matheus.com.br 
+
+security:
+  jwt:
+    token:
+      secret-key: 53ccr37
+      expire-length: 3600000
+
+spring.jpa:
+  database: POSTGRESQL
+  hibernate.ddl-auto: update
+  show-sql: true
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rest_with_spring_boot?useTimezone=true&serverTimezone=UTC
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      show-sql: false
+  sql:
+    init:
+      platform: postgres
